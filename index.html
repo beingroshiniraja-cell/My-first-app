@@ -1,13 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My First App</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Daily Affirmation App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #ffe6f0;
+      padding-top: 100px;
+    }
+
+    h1 {
+      color: #cc0066;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #ff4da6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #e60073;
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello Future Me 💌</h1>
-  <button onclick="showMessage()">Click Me</button>
 
-  <script src="script.js"></script>
+  <h1>🌸 Daily Affirmation</h1>
+
+  <button onclick="showAffirmation()">Show Affirmation</button>
+
+  <div id="message"></div>
+
+  <script>
+    function showAffirmation() {
+      const affirmations = [
+        "I am becoming stronger every day.",
+        "My future is bright and beautiful.",
+        "I deserve peace and happiness.",
+        "I am building the life I want.",
+        "I am confident and capable."
+      ];
+
+      const randomIndex = Math.floor(Math.random() * affirmations.length);
+      document.getElementById("message").innerText = affirmations[randomIndex];
+    }
+  </script>
+
 </body>
 </html>
